@@ -21,16 +21,19 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
     return (
         <PsychologistProvider>
-            <Container maxWidth='md'>
+            <Container
+                maxWidth='md'
+                sx={{
+                    paddingX: { xs: '5px', sm: '16px' }, // Padding for small screens (5px) and default for larger
+                    overflowX: 'hidden' // Prevents horizontal scroll
+                }}
+            >
                 <Typography variant='h4' align='center' gutterBottom>
-                    <h2 style={{ color: 'rgba(41, 100, 194, 0.811)' }}>
-                        Psychologist Feedback
-                    </h2>
+                    Psychologist Feedback
                 </Typography>
                 <AppContent />
             </Container>
         </PsychologistProvider>
     );
 };
-
 export default App;
