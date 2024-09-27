@@ -1,39 +1,39 @@
 import React from 'react';
-import { PsychologistProvider, usePsychologists } from './PsychologistContext';
-import { PsychologistChart } from './PsychologistChart';
-import { FeedbackSummaries } from './FeedbackSummaries';
-import { CircularProgress, Container, Typography } from '@mui/material';
+import { PsychologistProvider } from './PsychologistContext';
+import {
+    Container,
+    Typography,
+    ThemeProvider,
+    createTheme
+} from '@mui/material';
+import AppChart from './components/AppChart';
 
-const AppContent: React.FC = () => {
-    const { loading, error } = usePsychologists();
-
-    if (loading) return <CircularProgress />;
-    if (error) return <Typography color='error'>{error}</Typography>;
-
-    return (
-        <>
-            <PsychologistChart />
-            <FeedbackSummaries />
-        </>
-    );
-};
+const theme = createTheme({
+    typography: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
+    }
+});
 
 const App: React.FC = () => {
     return (
-        <PsychologistProvider>
-            <Container
-                maxWidth='md'
-                sx={{
-                    paddingX: { xs: '5px', sm: '16px' }, // Padding for small screens (5px) and default for larger
-                    overflowX: 'hidden' // Prevents horizontal scroll
-                }}
-            >
-                <Typography variant='h4' align='center' gutterBottom>
-                    Psychologist Feedback
-                </Typography>
-                <AppContent />
-            </Container>
-        </PsychologistProvider>
+        <ThemeProvider theme={theme}>
+            {' '}
+            <PsychologistProvider>
+                <Container
+                    maxWidth='md'
+                    sx={{
+                        paddingX: { xs: '5px', sm: '16px' },
+                        overflowX: 'hidden'
+                    }}
+                >
+                    <Typography variant='h4' align='center' gutterBottom>
+                        Psychologist Feedback
+                    </Typography>
+                    <AppChart />
+                </Container>
+            </PsychologistProvider>
+        </ThemeProvider>
     );
 };
+
 export default App;

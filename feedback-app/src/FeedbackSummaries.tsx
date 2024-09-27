@@ -8,7 +8,14 @@ export const FeedbackSummaries: React.FC = () => {
     return (
         <>
             {psychologists.map(psych => (
-                <Card key={psych.id} sx={{ marginBottom: 2 }}>
+                <Card
+                    key={psych.id}
+                    sx={{
+                        marginBottom: 2,
+                        backgroundColor: 'rgba(173, 216, 230, 0.3)',
+                        padding: '10px'
+                    }}
+                >
                     <CardContent>
                         <Typography
                             variant='h6'
