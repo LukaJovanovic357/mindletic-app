@@ -1,32 +1,14 @@
-import React, {
-    createContext,
-    useContext,
-    useState,
-    useEffect,
-    ReactNode
-} from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { fetchPsychologistData } from './api';
-
-export interface Psychologist {
-    id: string;
-    name: string;
-    score: number;
-    feedbackSummary: string;
-}
-
-interface PsychologistContextProps {
-    psychologists: Psychologist[];
-    loading: boolean;
-    error: string | null;
-}
+import {
+    Psychologist,
+    PsychologistContextProps,
+    PsychologistProviderProps
+} from '../types/types';
 
 const PsychologistContext = createContext<PsychologistContextProps | undefined>(
     undefined
 );
-
-interface PsychologistProviderProps {
-    children: ReactNode;
-}
 
 export const PsychologistProvider: React.FC<PsychologistProviderProps> = ({
     children

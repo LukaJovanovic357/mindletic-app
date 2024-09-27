@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <PsychologistProvider>
             <Container maxWidth='md'>
                 <Typography variant='h4' align='center' gutterBottom>
-                    Psychologist Feedback
+                    <h2>Psychologist Feedback</h2>
                 </Typography>
                 <AppContent />
             </Container>
