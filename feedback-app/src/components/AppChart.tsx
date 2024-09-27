@@ -13,7 +13,7 @@ const AppChart: React.FC = () => {
     return (
         <>
             <PsychologistChart />
-            <Box sx={{ marginTop: '10px' }}>
+            <Box sx={{ marginTop: '20px' }}>
                 {' '}
                 <FeedbackSummaries />
             </Box>
