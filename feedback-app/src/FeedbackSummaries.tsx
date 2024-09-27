@@ -10,9 +10,24 @@ export const FeedbackSummaries: React.FC = () => {
             {psychologists.map(psych => (
                 <Card key={psych.id} sx={{ marginBottom: 2 }}>
                     <CardContent>
-                        <Typography variant='h6'>{psych.name}</Typography>
-                        <Typography>Score: {psych.score}</Typography>
-                        <Typography>{psych.feedbackSummary}</Typography>
+                        <Typography
+                            variant='h6'
+                            sx={{ color: 'rgba(41, 100, 194, 0.811)' }}
+                        >
+                            {psych.name}
+                        </Typography>
+                        <Typography sx={{ color: 'rgba(41, 100, 194, 0.811)' }}>
+                            Score: {psych.score}
+                        </Typography>
+
+                        <Typography
+                            variant='body1'
+                            sx={{
+                                fontStyle: 'italic'
+                            }}
+                        >
+                            " {psych.feedbackSummary} "
+                        </Typography>
                     </CardContent>
                 </Card>
             ))}

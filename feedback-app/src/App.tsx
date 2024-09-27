@@ -23,7 +23,9 @@ const App: React.FC = () => {
         <PsychologistProvider>
             <Container maxWidth='md'>
                 <Typography variant='h4' align='center' gutterBottom>
-                    <h2>Psychologist Feedback</h2>
+                    <h2 style={{ color: 'rgba(41, 100, 194, 0.811)' }}>
+                        Psychologist Feedback
+                    </h2>
                 </Typography>
                 <AppContent />
             </Container>
